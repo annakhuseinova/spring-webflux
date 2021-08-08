@@ -1,6 +1,7 @@
 package com.annakhuseinova.springwebflux.service;
 
 import com.annakhuseinova.springwebflux.SleepUtil;
+import com.annakhuseinova.springwebflux.dto.MultiplyRequestDto;
 import com.annakhuseinova.springwebflux.dto.Response;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -18,5 +19,10 @@ public class ReactiveMathService {
                 .doOnNext(item -> SleepUtil.sleepSeconds(1))
                 .doOnNext(item -> System.out.println("reactive-math-service processing : " + item))
                 .map(i -> new Response(i *  input));
+    }
+
+    public Mono<Response> multiplyPost(Mono<MultiplyRequestDto> dtoMono){
+        return dtoMono.map(dto -> dto.getFirst() * dto.getSecond())
+                .map(Response::new);
     }
 }

@@ -1,13 +1,12 @@
 package com.annakhuseinova.springwebflux.controller;
 
 
+import com.annakhuseinova.springwebflux.dto.MultiplyRequestDto;
 import com.annakhuseinova.springwebflux.dto.Response;
 import com.annakhuseinova.springwebflux.service.ReactiveMathService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -26,5 +25,17 @@ public class ReactiveMathController {
     @GetMapping("table/{input}")
     public Flux<Response> multiplicationTable(@PathVariable int input){
         return this.reactiveMathService.multiplicationTable(input);
+    }
+
+    @GetMapping(value = "table/{input}/stream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Flux<Response> multiplicationTableStream(@PathVariable int input){
+        return this.reactiveMathService.multiplicationTable(input);
+    }
+
+    // When we specify Mono as request body type, Spring Boot will recognize that this request should be read
+    // in an non-blocking way
+    @PostMapping("multiply")
+    public Mono<Response> multiplyPost(@RequestBody Mono<MultiplyRequestDto> requestDtoMono){
+        return this.reactiveMathService.multiplyPost(requestDtoMono);
     }
 }
