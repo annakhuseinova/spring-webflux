@@ -33,7 +33,7 @@ public class ReactiveMathController {
     }
 
     // When we specify Mono as request body type, Spring Boot will recognize that this request should be read
-    // in an non-blocking way
+    // in an non-blocking way (will be taken to work only after the request read is complete)
     @PostMapping("multiply")
     public Mono<Response> multiplyPost(@RequestBody Mono<MultiplyRequestDto> requestDtoMono){
         return this.reactiveMathService.multiplyPost(requestDtoMono);
