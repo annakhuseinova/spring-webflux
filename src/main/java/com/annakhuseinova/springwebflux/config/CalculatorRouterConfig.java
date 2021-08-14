@@ -1,6 +1,5 @@
 package com.annakhuseinova.springwebflux.config;
 
-import com.annakhuseinova.springwebflux.exception.InputValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +16,6 @@ public class CalculatorRouterConfig {
         return RouterFunctions.route()
                 .path("calculator", this::serverResponseRouterFunction)
                 .build();
-
     }
 
     private RouterFunction<ServerResponse> serverResponseRouterFunction(){
