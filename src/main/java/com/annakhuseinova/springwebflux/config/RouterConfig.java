@@ -11,7 +11,7 @@ import reactor.core.publisher.Mono;
 import java.util.function.BiFunction;
 
 /**
- *
+ * Functional Endpoints
  * */
 @Configuration
 @RequiredArgsConstructor
