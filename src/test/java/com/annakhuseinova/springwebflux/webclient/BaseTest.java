@@ -1,4 +1,4 @@
-package com.annakhuseinova.springwebflux;
+package com.annakhuseinova.springwebflux.webclient;
 
 import org.springframework.boot.test.context.SpringBootTest;
 

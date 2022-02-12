@@ -1,4 +1,4 @@
-package com.annakhuseinova.springwebflux;
+package com.annakhuseinova.springwebflux.webclient;
 
 import com.annakhuseinova.springwebflux.dto.Response;
 import org.junit.jupiter.api.Test;
@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-public class Lecture5BadRequestTest extends BaseTest{
+public class Lecture5BadRequestTest extends BaseTest {
 
     @Autowired
     private WebClient webClient;

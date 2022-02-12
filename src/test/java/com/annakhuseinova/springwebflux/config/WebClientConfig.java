@@ -2,6 +2,7 @@ package com.annakhuseinova.springwebflux.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.web.reactive.function.client.ClientRequest;
 import org.springframework.web.reactive.function.client.ClientResponse;
 import org.springframework.web.reactive.function.client.ExchangeFunction;
@@ -19,6 +20,11 @@ public class WebClientConfig {
                 .filter(this::sessionToken)
                 .build();
     }
+//
+//    @Bean
+//    public WebTestClient webTestClient(){
+//        return WebTestClient.bindToServer().baseUrl("http://localhost:8080").build();
+//    }
 
     // ClientRequest objects is immutable, you can only create a new one
     private Mono<ClientResponse> sessionToken(ClientRequest clientRequest, ExchangeFunction exchangeFunction){

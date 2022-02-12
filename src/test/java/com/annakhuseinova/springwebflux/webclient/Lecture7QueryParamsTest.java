@@ -1,4 +1,4 @@
-package com.annakhuseinova.springwebflux;
+package com.annakhuseinova.springwebflux.webclient;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import reactor.test.StepVerifier;
 import java.net.URI;
 import java.util.Map;
 
-public class Lecture7QueryParamsTest extends BaseTest{
+public class Lecture7QueryParamsTest extends BaseTest {
 
     @Autowired
     private WebClient webClient;

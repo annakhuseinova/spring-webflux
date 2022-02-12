@@ -1,4 +1,4 @@
-package com.annakhuseinova.springwebflux;
+package com.annakhuseinova.springwebflux.webclient;
 
 import com.annakhuseinova.springwebflux.dto.MultiplyRequestDto;
 import com.annakhuseinova.springwebflux.dto.Response;
@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-public class Lecture9AttributesTest extends BaseTest{
+public class Lecture9AttributesTest extends BaseTest {
 
     @Autowired
     private WebClient webClient;

@@ -1,4 +1,4 @@
-package com.annakhuseinova.springwebflux;
+package com.annakhuseinova.springwebflux.webclient;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +7,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-public class Lecture10Assignment extends BaseTest{
+public class Lecture10Assignment extends BaseTest {
 
     private static final String FORMAT = "%d %s %d = %s";
     private static final int A = 10;

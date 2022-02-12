@@ -1,4 +1,4 @@
-package com.annakhuseinova.springwebflux;
+package com.annakhuseinova.springwebflux.webclient;
 
 import com.annakhuseinova.springwebflux.dto.InputFailedValidationResponse;
 import com.annakhuseinova.springwebflux.dto.Response;
