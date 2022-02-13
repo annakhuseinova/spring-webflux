@@ -13,7 +13,6 @@ import reactor.test.StepVerifier;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-@AutoConfigureWebTestClient
 public class Lecture1SimpleWebTestClientTest {
 
     @Autowired
@@ -22,7 +21,7 @@ public class Lecture1SimpleWebTestClientTest {
     @Test
     public void stepVerifierTest(){
         Flux<Response> responseFlux = this.webTestClient.get()
-                .uri("reactive-math/square/{number}", 5)
+                .uri("/reactive-math/square/{number}", 5)
                 .exchange()
                 .expectStatus().is2xxSuccessful()
                 .expectHeader().contentType(MediaType.APPLICATION_JSON)
@@ -38,7 +37,7 @@ public class Lecture1SimpleWebTestClientTest {
     @Test
     public void fluentAssertionApiTest(){
         this.webTestClient.get()
-                .uri("reactive-math/square/{number}", 5)
+                .uri("/reactive-math/square/{number}", 5)
                 .exchange()
                 .expectStatus().is2xxSuccessful()
                 .expectHeader().contentType(MediaType.APPLICATION_JSON)

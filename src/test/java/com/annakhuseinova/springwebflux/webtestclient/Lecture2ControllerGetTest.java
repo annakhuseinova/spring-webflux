@@ -72,7 +72,7 @@ public class Lecture2ControllerGetTest {
         Map<String, Integer> map = Map.of("count", 10, "page", 20);
         this.webTestClient
                 .get()
-                .uri(uriBuilder -> uriBuilder.path("/job/search").query("count={count}&page={page}").build(map))
+                .uri(uriBuilder -> uriBuilder.path("/jobs/search").query("count={count}&page={page}").build(map))
                 .exchange()
                 .expectStatus().is2xxSuccessful()
                 .expectBodyList(Integer.class)

@@ -20,11 +20,11 @@ public class WebClientConfig {
                 .filter(this::sessionToken)
                 .build();
     }
-//
-//    @Bean
-//    public WebTestClient webTestClient(){
-//        return WebTestClient.bindToServer().baseUrl("http://localhost:8080").build();
-//    }
+
+    @Bean
+    public WebTestClient webTestClient(){
+        return WebTestClient.bindToServer().baseUrl("http://localhost:8080").build();
+    }
 
     // ClientRequest objects is immutable, you can only create a new one
     private Mono<ClientResponse> sessionToken(ClientRequest clientRequest, ExchangeFunction exchangeFunction){
